@@ -1,0 +1,15 @@
+[
+    {
+      "userId":1,
+      "userName": "Sergey",
+      "email": "test@email.com",
+      "phone": "+79090999999",
+      "purchases": [
+        {"id": 1, "date": "2026-09-22"},
+        {"id": 4, "date": "2026-09-21"},
+        {"id": 8, "date": "2026-09-20"},
+        {"id": 10, "date": "2026-09-20"}
+      ]
+    }
+
+]
