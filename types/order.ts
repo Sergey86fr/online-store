@@ -1,6 +1,5 @@
 import type { ObjectId } from "mongodb";
-import { IProduct } from "./product";
-import { useEffect, useState } from "react";
+
 
 // Позиция заказа. Название, картинка и цены копируются из товара в момент покупки:
 // если товар потом подорожает или переименуется, в истории заказов останется как было
