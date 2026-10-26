@@ -27,16 +27,19 @@ export const LOYALTY_CARD_DISCOUNT = 10;
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 // С какой даты товар считается новинкой: сейчас минус NEW_PRODUCT_DAYS дней
-export const getNewProductsSince = () => new Date(Date.now() - NEW_PRODUCT_DAYS * DAY_MS);
+export const getNewProductsSince = () =>
+  new Date(Date.now() - NEW_PRODUCT_DAYS * DAY_MS);
 
 // Округление до копеек: 119 * 0.9 в JS даёт 107.10000000000001
 export const roundPrice = (price: number) => Math.round(price * 100) / 100;
 
 // Адрес страницы товара — в одном месте, чтобы при переезде страницы поменять только здесь
-export const getProductHref = (id: string) => `/product-refactored/${id}`;
+export const getProductHref = (category: string, id: string) =>
+  `/catalog/${category}/${id}`;
 
 // Цена для показа: 108.9 -> "108,90"
-export const formatPrice = (price: number) => price.toFixed(2).replace(".", ",");
+export const formatPrice = (price: number) =>
+  price.toFixed(2).replace(".", ",");
 
 // Цены товара за штуку: обычная (со скидкой акции) и по карте покупателя (на новинки карта не действует)
 export const getProductPrices = ({
@@ -50,7 +53,11 @@ export const getProductPrices = ({
 };
 
 // Документ из MongoDB -> товар для API: _id становится строковым id, isNew вычисляется
-export const toProduct = ({ _id, createdAt, ...rest }: IProductDocument): IProduct => ({
+export const toProduct = ({
+  _id,
+  createdAt,
+  ...rest
+}: IProductDocument): IProduct => ({
   ...rest,
   id: _id.toString(),
   createdAt: createdAt.toISOString(),

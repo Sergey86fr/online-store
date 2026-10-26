@@ -10,6 +10,7 @@ import { IProductDocument } from "@/types/product";
 import { IPurchaseDocument, IUserDocument } from "@/types/user";
 import { IOrderDocument, IOrderItemDocument } from "@/types/order";
 
+
 // Сколько разных товаров и сколько штук одного товара можно купить за раз
 const MAX_ORDER_ITEMS = 100;
 const MAX_ITEM_COUNT = 99;
@@ -201,6 +202,7 @@ export async function POST(request: NextRequest) {
           price,
           count,
           sum: roundPrice(price * count),
+          category: product.category
         };
       });
 

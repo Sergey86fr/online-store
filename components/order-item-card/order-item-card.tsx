@@ -13,7 +13,7 @@ interface IOrderItemCardProps {
 // а в левом верхнем углу — сколько штук купили.
 // Рейтинга в снимке заказа нет, поэтому звёзд из макета здесь нет
 const OrderItemCard = ({ item }: IOrderItemCardProps) => {
-  const { productId, title, img, price, count } = item;
+  const { productId, title, img, price, count,category  } = item;
 
   return (
     <div className="w-full h-full bg-white rounded-sm shadow-[1px_2px_4px_0px_rgba(0,0,0,0.1)] hover:shadow-(--shadow-primary) duration-300 overflow-hidden flex flex-col">
@@ -46,7 +46,7 @@ const OrderItemCard = ({ item }: IOrderItemCardProps) => {
       <div className="p-2 flex flex-col gap-2 grow">
         <span className="text-sm md:text-lg font-bold">{formatPrice(price)} ₽</span>
         <Link
-          href={getProductHref(productId)}
+          href={getProductHref(category,productId)}
           className="text-xs md:text-base line-clamp-3 grow hover:text-(--color-primary) duration-300"
         >
           {title}
