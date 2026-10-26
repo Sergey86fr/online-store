@@ -1,4 +1,5 @@
 import type { ObjectId } from "mongodb";
+import { ProductCategory } from "./product";
 
 
 // Позиция заказа. Название, картинка и цены копируются из товара в момент покупки:
@@ -12,6 +13,7 @@ export interface IOrderItem {
     price: number; // сколько заплачено за 1 шт.
     count: number;
     sum: number; // price * count
+    category: ProductCategory
 }
 
 // Статус заказа: new — оформлен, in-progress — собираем/везём, delivered — доставлен, cancelled — отменён

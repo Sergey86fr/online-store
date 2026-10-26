@@ -7,7 +7,7 @@ import Burger from "../../public/images/header/burger-menu-mob.svg";
 const TopMenu = () => {
   
   return (
-     <ul className="flex flex-1     items-center gap-9 md:gap-6 ">
+     <ul className="flex flex-1  items-center gap-9 md:gap-6 ">
        <li className='block md:hidden'>
          <Link className='hover:text-[#bfbfbf]' href={"/catalog"}>
           <Burger alt="Меню" className="w-6 h-6" />

@@ -17,7 +17,7 @@ const SimilarProducts = ({ products }: { products: IProduct[] }) => {
         {products.map((product) => (
           <li key={product.id}>
             <Link
-              href={getProductHref(product.id)}
+              href={getProductHref(product.category, product.id)}
               className="h-15.5 md:h-39.5 xl:h-full flex flex-col bg-white rounded-sm overflow-hidden shadow-[1px_2px_4px_0px_rgba(0,0,0,0.1)] hover:shadow-(--shadow-primary) duration-300"
             >
               <div className="relative flex-1 min-h-0">
