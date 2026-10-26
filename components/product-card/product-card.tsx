@@ -92,8 +92,8 @@ const ProductCard = ({ product, className = "" }: IProductCartProps) => {
             </div>
           )}
         </div>
-        <Link className="after:absolute after:inset-0" href={getProductHref(category, id)}>
-          <p className="mb-2  text-xs md:text-base  grow line-clamp-3">
+        <Link className="after:absolute after:inset-0 mb-2 grow" href={getProductHref(category, id)}>
+          <p className="  text-xs md:text-base   line-clamp-3">
             {description}
           </p>
         </Link>
@@ -103,7 +103,7 @@ const ProductCard = ({ product, className = "" }: IProductCartProps) => {
           <button
             type="button"
             disabled={isOutOfStock}
-            className=" w-full z-10  h-10 text-base text-(--color-secondary) border border-(--color-secondary) bg-transparent rounded-sm enabled:hover:text-white enabled:hover:bg-(--color-primary) enabled:hover:border-transparent enabled:active:shadow-(--shadow-primary) transition-all duration-300 cursor-pointer select-none disabled:cursor-not-allowed disabled:text-[#BFBFBF] disabled:border-[#BFBFBF]"
+            className=" w-full relative z-10  h-10 text-base text-(--color-secondary) border border-(--color-secondary) bg-transparent rounded-sm enabled:hover:text-white enabled:hover:bg-(--color-primary) enabled:hover:border-transparent enabled:active:shadow-(--shadow-primary) transition-all duration-300 cursor-pointer select-none disabled:cursor-not-allowed disabled:text-[#BFBFBF] disabled:border-[#BFBFBF]"
           >
             В корзину
           </button>
