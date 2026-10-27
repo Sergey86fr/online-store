@@ -3,9 +3,6 @@ import Arrow from "../../public/images/icons/arrow-rigth.svg";
 import { PRODUCT_CATEGORY_LABELS } from "@/lib/products";
 import { IProduct } from "@/types/product";
 
-// Крошки страницы товара: Главная › Каталог › Категория › Товар.
-// Общий Breadcrumbs строит крошки из адреса, а в адресе товара (/product-refactored/<id>)
-// нет ни категории, ни названия — поэтому собираем их из данных товара. Вид — как у Breadcrumbs
 const ProductBreadcrumbs = ({ product }: { product: Pick<IProduct, "title" | "category"> }) => {
   const crumbs = [
     { href: "/", label: "Главная" },
