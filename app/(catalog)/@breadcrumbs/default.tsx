@@ -1,10 +1,7 @@
-import Breadcrumbs from '@/components/breadcrumbs/breadcrumbs'
-import React from 'react'
+import Breadcrumbs from "@/components/breadcrumbs/breadcrumbs";
 
 const DefaultBreadcrumbs = () => {
-  return (
-    <Breadcrumbs />
-  )
-}
+  return <Breadcrumbs />;
+};
 
-export default DefaultBreadcrumbs
+export default DefaultBreadcrumbs;
