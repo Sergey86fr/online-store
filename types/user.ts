@@ -1,5 +1,10 @@
 import type { ObjectId } from "mongodb";
 
+export interface ICartItemDocument {
+    productId: ObjectId;
+    count: number;
+}
+
 // Покупка в том виде, в каком она лежит в MongoDB
 export interface IPurchaseDocument {
     productId: ObjectId; // _id купленного товара
@@ -13,4 +18,6 @@ export interface IUserDocument {
     email: string;
     phone: string;
     purchases: IPurchaseDocument[];
+    favorites?: ObjectId[];
+    cart?: ICartItemDocument[];
 }

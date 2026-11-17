@@ -14,7 +14,7 @@ const TopMenu = () => {
         </Link>
        </li>
        <li>
-         <Link className='flex flex-col items-center gap-2 hover:text-[#bfbfbf]' href={""} >
+         <Link className='flex flex-col items-center gap-2 hover:text-[#bfbfbf]' href={"/favorites"} >
           <Favorites alt="Меню" className="w-6 h-6" />
           <span>Избранное</span>
         </Link>

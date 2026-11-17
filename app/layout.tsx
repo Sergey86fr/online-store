@@ -3,13 +3,12 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import FavoritesProvider from "@/hooks/useFavorites";
 
 const rubik = Rubik({
   variable: "--font-rubik",
   subsets: ["latin", "cyrillic"],
 });
-
-
 
 export const metadata: Metadata = {
   title: {
@@ -28,10 +27,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${rubik.variable} font-sans  h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
-        </body>
+        <FavoritesProvider>
+          <Header />
+          {children}
+          <Footer />
+        </FavoritesProvider>
+      </body>
     </html>
   );
 }

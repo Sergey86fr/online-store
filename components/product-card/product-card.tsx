@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Heart from "../../public/images/icons/heart.svg";
 import { IProduct } from "@/types/product";
 import Rating from "../rating/rating";
 import { getProductHref, LOYALTY_CARD_DISCOUNT } from "@/lib/products";
 import Link from "next/link";
+import FavoriteButton from "../favorite-button/favorite-button";
 
 interface IProductCartProps {
   product: IProduct;
@@ -53,9 +53,7 @@ const ProductCard = ({ product, className = "" }: IProductCartProps) => {
           </div>
         )}
 
-        <button className="bg-[#F3F2F1] z-10 hover:bg-[#FCD5BA] opacity-50 duration-300  w-8 h-8 absolute top-3 right-3 flex justify-center items-center rounded-sm cursor-pointer">
-          <Heart className="w-6 h-6" alt="добавить в избранное" />
-        </button>
+       <FavoriteButton productId={product.id} />
 
         {discountPercent > 0 && (
           <div className="w-11.5 h-6 md:w-14 md:h-8  bg-(--color-primary) rounded-sm flex justify-center items-center absolute left-2.5 bottom-2.5">
